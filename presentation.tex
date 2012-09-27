@@ -1,12 +1,19 @@
 % !TEX TS-program = make
 
+%
+% Example beamer presentation
+%
 \documentclass{beamer}
 \usetheme{Monterey}
-
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{bibentry}
+\nobibliography*
 
 
+%
+% Affiliation, etc
+%
 \title{Monterey, a Beamer Theme for NPS}
 \subtitle{To compliment the NPSReport package}
 \author{Author Name}
@@ -15,6 +22,9 @@
 \titlegraphic{\includegraphics[width=0.3\textwidth]{nps_logo_3clr_cymk}}
 
 
+%
+% Begin
+%
 \begin{document}
 
 \begin{frame}[plain,t]
@@ -43,11 +53,14 @@
 \end{itemize}
 \end{frame}
 
+
 \subsection{Text}
 \begin{frame}
 \frametitle{Another Frame, Another Frame}
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 \end{frame}
+
+
 
 \subsection{Blocks}
 \begin{frame}
@@ -65,12 +78,20 @@ Hello World.
 \end{alertblock}
 
 \begin{exampleblock}{Example Block}
-Hello World.
+Here is a reference to the \LaTeX book~\cite{texbook}.
 \end{exampleblock}
-
 \end{frame}
 
-\bibliographystyle{plain}
+
+%
+% Pretty bibliography section
+%
+\section{References}
+\begin{frame}
+\frametitle{References}
+\bibliographystyle{apalike}
 \bibliography{references}
+\end{frame}
+
 
 \end{document}
