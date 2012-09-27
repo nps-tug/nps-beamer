@@ -1,0 +1,32 @@
+\mode<presentation>
+
+\if@useblacktitletext%
+	\setbeamercolor*{frametitle}{fg=black}
+	\setbeamercolor*{title}{fg=black}
+	\setbeamercolor*{subtitle}{fg=black}
+	\setbeamercolor*{author}{fg=black}
+	\setbeamercolor*{institute}{fg=black}
+	\setbeamercolor*{date}{fg=black}
+\else%
+	\setbeamercolor*{frametitle}{fg=white}
+	\setbeamercolor*{title}{fg=white}
+	\setbeamercolor*{subtitle}{fg=white}
+	\setbeamercolor*{author}{fg=white}
+	\setbeamercolor*{institute}{fg=white}
+	\setbeamercolor*{date}{fg=white}
+\fi%
+
+\setbeamercolor{block title}{use=structure,fg=white,bg=structure.fg!75!black}
+\setbeamercolor{block title alerted}{use=alerted text,fg=white,bg=alerted text.fg!75!black}
+\setbeamercolor{block title example}{use=example text,fg=white,bg=example text.fg!75!black}
+
+\setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!10!bg}
+\setbeamercolor{block body alerted}{parent=normal text,use=block title alerted,bg=block title alerted.bg!10!bg}
+\setbeamercolor{block body example}{parent=normal text,use=block title example,bg=block title example.bg!10!bg}
+
+\setbeamercolor*{normal text}{fg=black,bg=white}
+\setbeamercolor*{alerted text}{fg=NPSLightBlue}
+\setbeamercolor*{example text}{fg=NPSBabyBlue}
+\setbeamercolor*{structure}{fg=NPSDarkBlue}
+
+\mode<all>

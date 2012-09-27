@@ -1,0 +1,33 @@
+\ProvidesPackage{beamerthemeMonterey}
+\RequirePackage{beamerbasethemes}[2004/10/07]
+\RequirePackage{calc}
+\RequirePackage{ifthen}
+
+% Buy default, use white lettering on titles
+\newif\if@useblacktitletext
+\@useblacktitletextfalse
+
+
+% Process options
+%
+
+\DeclareOptionBeamer{bodybackgroundfile}{
+	\PassOptionsToPackage{bodybackgroundfile=#1}{beamerouterthemeMonterey}
+}
+\DeclareOptionBeamer{titlebackgroundfile}{
+	\PassOptionsToPackage{titlebackgroundfile=#1}{beamerouterthemeMonterey}
+}
+
+\DeclareOptionBeamer{useblacktitletext}{\@useblacktitletexttrue}
+\ProcessOptionsBeamer
+
+\definecolor{NPSGrey}{HTML}{2F4050}
+\definecolor{NPSLightBlue}{HTML}{B8C5CF}
+\definecolor{NPSDarkBlue}{HTML}{333399}
+\definecolor{NPSFog}{HTML}{DAEDEF}
+\definecolor{NPSBabyBlue}{HTML}{BBE0E3}
+
+\mode<presentation>
+\usecolortheme{Peacock}
+\usefonttheme{serif}
+\useoutertheme{Monterey}

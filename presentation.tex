@@ -1,0 +1,76 @@
+% !TEX TS-program = make
+
+\documentclass{beamer}
+\usetheme{Monterey}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+
+\title{Monterey, a Beamer Theme for NPS}
+\subtitle{To compliment the NPSReport package}
+\author{Author Name}
+\date{\today}
+\institute[\sc www.nps.edu]{Naval Postgraduate School}
+\titlegraphic{\includegraphics[width=0.3\textwidth]{nps_logo_3clr_cymk}}
+
+
+\begin{document}
+
+\begin{frame}[plain,t]
+\titlepage
+\end{frame}
+
+
+\section{Introduction}
+\begin{frame}
+\frametitle{A Frame Title}
+\framesubtitle{A subtitle}
+\begin{itemize}
+\item First thing
+	\begin{itemize}
+	\item small point
+	\item fine print
+	\end{itemize}
+\item Second thing
+	\begin{enumerate}
+	\item point 1
+	\end{enumerate}
+\item Third thing
+	\begin{description}
+	\item[Research] the scientific pursuit for knowledge
+	\end{description}
+\end{itemize}
+\end{frame}
+
+\subsection{Text}
+\begin{frame}
+\frametitle{Another Frame, Another Frame}
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+\end{frame}
+
+\subsection{Blocks}
+\begin{frame}
+\frametitle{Blocks}
+\begin{definition}[Greetings]
+Hello World
+\end{definition}
+
+\begin{theorem}[Theorem]
+$a^n + b^n = c^n, n \leq 2$
+\end{theorem}
+
+\begin{alertblock}{Alert Block}
+Hello World.
+\end{alertblock}
+
+\begin{exampleblock}{Example Block}
+Hello World.
+\end{exampleblock}
+
+\end{frame}
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

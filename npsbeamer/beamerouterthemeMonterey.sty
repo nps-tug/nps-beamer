@@ -1,0 +1,94 @@
+\RequirePackage{calc}
+\RequirePackage{tikz}
+
+\newdimen\beamer@headheight
+\def\Monterey@backgroundtitlefile{defaultTitleBackground}
+\def\Monterey@backgroundbodyfile{defaultBodyBackground}
+
+\DeclareOptionBeamer{titlebackgroundfile}{\def\Monterey@backgroundtitlefile{#1}}
+\DeclareOptionBeamer{bodybackgroundfile}{\def\Monterey@backgroundbodyfile{#1}}
+\ProcessOptionsBeamer
+
+\mode<presentation>
+
+\pgfdeclareimage[interpolate=true ,height=\the\paperheight, width=\the\paperwidth]{titleImage}{\Monterey@backgroundtitlefile}
+\pgfdeclareimage[interpolate=true ,height=\the\paperheight, width=\the\paperwidth]{bodyImage}{\Monterey@backgroundbodyfile}
+
+\setbeamertemplate{background}{
+	\begin{tikzpicture}
+		\useasboundingbox (0,0) rectangle (\the\paperwidth, \the\paperheight) ; 
+
+		\pgftext[at=\pgfpoint{0cm}{0cm},left,base]{\pgfuseimage{titleImage}} ; 
+
+		\ifnum\thepage>1\relax%
+			\pgftext[at=\pgfpoint{0cm}{0cm},left,base]{\pgfuseimage{bodyImage}} ; 
+		\fi
+	\end{tikzpicture}
+}
+
+
+\defbeamertemplate*{title page}{Monterey theme}[1][]
+{
+  \vbox{}
+  \vfill
+  \begin{centering}
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+    \vskip0.5em
+    \begin{beamercolorbox}[sep=8pt,center,#1]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vskip1em\par
+    \begin{beamercolorbox}[sep=8pt,center,#1]{author}
+      \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{institute}
+      \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}\vskip0.5em
+  \end{centering}
+  \vfill
+}
+
+\defbeamertemplate*{frametitle}{Monterey theme}
+{%
+	\nointerlineskip%
+	\vskip-\beamer@headheight%
+	\vskip+0.1cm%
+	\leftskip=-\beamer@leftmargin%
+	\advance\leftskip by 0.8cm%
+	\vbox to \beamer@headheight{%
+		\vskip+0.1cm%
+		\vfil%
+		{\usebeamercolor[fg]{frametitle}\usebeamerfont{frametitle}\insertframetitle\par}%
+		{\usebeamercolor[fg]{framesubtitle}\usebeamerfont{framesubtitle}\insertframesubtitle\par}%
+		\vbox{}%
+		\vskip-1em%
+		\vfil
+	}%
+	\hfill%
+	\includegraphics[height=0.9cm]{nps_logo_3clr_cymk}%
+	\hspace{-0.8\beamer@rightmargin}
+}
+
+
+
+\defbeamertemplate*{footline}{Monterey theme}
+{
+	\leavevmode%
+	\hspace{0.6\beamer@leftmargin}%
+  	\hfill%
+  	\insertshortinstitute%
+  	\hfill%
+  	\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}%
+	\vskip0pt%
+}
+
+\setbeamertemplate{headline}{}
+\setbeamertemplate{navigation symbols}{}
