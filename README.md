@@ -7,6 +7,5 @@ Color theme is Peacock, following animal name conventions for colors.
 The Monterey beamer theme is based on an NPS PowerPoint deck used
 for official presentations (at least, circa 2012).
 
-https://github.com/gondree/nps-beamer
-
+https://github.com/nps-lug/nps-beamer
 
