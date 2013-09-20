@@ -1,0 +1,63 @@
+\mode<presentation>
+{
+  \usetheme{nps}
+}
+\usepackage{grffile}
+%\mode<presentation>{\usetheme{default}}
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath,amsthm, amssymb, latexsym}
+%\usepackage[orientation=portrait,size=a0,scale=1.4,debug]{beamerposter}
+\usepackage[orientation=landscape,size=custom,width=16,height=9,scale=0.5,debug]{beamerposter}
+\usepackage[absolute,showboxes,overlay]{textpos}
+
+
+\usepackage{tikz}
+\usepackage{tikzpagenodes}
+\usetikzlibrary{positioning,backgrounds}
+\usetikzlibrary{shadows.blur}
+\usetikzlibrary{shapes.symbols}
+\usefonttheme{serif}
+
+%\beamertemplatenavigationsymbolsempty
+
+% light-colored theme
+% title background color RGB: 228, 224, 221
+% slide top-bar color RGB: 135, 126, 109
+\definecolor{titlebg}{RGB}{228,224,221}
+\definecolor{topbar}{RGB}{135,126,109}
+% dark-colored theme
+
+
+\setlength{\TPHorizModule}{10em}
+\setlength{\TPVertModule}{\TPHorizModule}
+
+\defbeamertemplate*{title page}{customized}[1][]
+{
+\vspace{8em}\centering
+  \usebeamerfont{title}\inserttitle\par
+  \usebeamerfont{subtitle} %\usebeamercolor[fg]{subtitle}
+  \insertsubtitle\par
+  \bigskip
+  \usebeamerfont{author}\insertauthor\par
+  \usebeamerfont{institute}\insertinstitute\par
+  \usebeamerfont{date}\insertdate\par
+  \usebeamercolor[fg]{titlegraphic}\inserttitlegraphic
+}
+
+%\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{sidebar right}{}
+\setbeamertemplate{footline}{%
+\hfill\usebeamertemplate***{navigation symbols}
+\hspace{0.25cm}\insertframenumber{}/\inserttotalframenumber
+}
+
+\setbeamertemplate{frametitle}{
+\hspace{-0.4cm}
+%\vskip-0.01cm
+  \strut\insertframetitle\strut
+%\vspace{0.1cm}
+%\vbox{\hsize=10cm\bfseries\strut\insertframetitle\strut}
+%\vspace{0.1cm}
+}
+
